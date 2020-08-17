@@ -14,6 +14,7 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/shared/event-route-activator.service';
 import { EventsListResolver } from './events/shared/events-list-resolver.service';
+import { AuthService } from './user/shared/auth.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EventsListResolver } from './events/shared/events-list-resolver.service
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    AuthService,
     EventService, 
     EventsListResolver,
     ToastrService, 
