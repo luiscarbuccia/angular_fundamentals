@@ -15,6 +15,7 @@ import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/shared/event-route-activator.service';
 import { EventsListResolver } from './events/shared/events-list-resolver.service';
 import { AuthService } from './user/shared/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { AuthService } from './user/shared/auth.service';
   ],
   imports: [
     BrowserModule, 
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

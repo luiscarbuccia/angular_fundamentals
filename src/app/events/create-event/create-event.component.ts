@@ -6,10 +6,16 @@ import { Router } from '@angular/router'
 })
 
 export class CreateEventComponent{
+    newEvent;
     isDirty:boolean = true;
     constructor(private router:Router){
 
     }
+
+    saveEvent(formValues){
+        console.log(formValues);
+    }
+
     cancel(){
         this.router.navigate(['/events']);
     }
