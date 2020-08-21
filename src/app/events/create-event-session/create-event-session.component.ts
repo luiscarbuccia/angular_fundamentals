@@ -1,12 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ISession } from '../shared/event.model';
 
 @Component({
+    selector: 'create-session',
     templateUrl: './create-event-session.component.html',
     styleUrls: ['./create-event-session.component.css']
 })
 export class CreateEventSessionComponent implements OnInit{
+    @Output() saveNewSession = new EventEmitter();
     name: FormControl;
     presenter: FormControl;
     duration: FormControl;
@@ -52,5 +54,6 @@ export class CreateEventSessionComponent implements OnInit{
         }
 
         console.log(session);
+        this.saveNewSession.emit(session);
     }
 }
