@@ -3,7 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ISession } from '../shared/event.model';
 
 @Component({
-    templateUrl: './create-event-session.component.html'
+    templateUrl: './create-event-session.component.html',
+    styleUrls: ['./create-event-session.component.css']
 })
 export class CreateEventSessionComponent implements OnInit{
     name: FormControl;
