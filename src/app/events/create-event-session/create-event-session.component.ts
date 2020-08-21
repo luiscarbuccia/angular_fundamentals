@@ -9,6 +9,7 @@ import { ISession } from '../shared/event.model';
 })
 export class CreateEventSessionComponent implements OnInit{
     @Output() saveNewSession = new EventEmitter();
+    @Output() cancelAddSession = new EventEmitter();
     name: FormControl;
     presenter: FormControl;
     duration: FormControl;
@@ -55,5 +56,9 @@ export class CreateEventSessionComponent implements OnInit{
 
         console.log(session);
         this.saveNewSession.emit(session);
+    }
+
+    cancel(){
+        this.cancelAddSession.emit();
     }
 }
