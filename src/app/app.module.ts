@@ -16,11 +16,13 @@ import { EventRouteActivator } from './events/shared/event-route-activator.servi
 import { EventsListResolver } from './events/shared/events-list-resolver.service';
 import { AuthService } from './user/shared/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateEventSessionComponent } from './events/create-event-session/create-event-session.component';
 
 @NgModule({
   declarations: [
     Error404Component,
     CreateEventComponent,
+    CreateEventSessionComponent,
     EventsAppComponent,
     EventDetailsComponent,
     EventsListComponent,
