@@ -18,10 +18,12 @@ import { AuthService } from './user/shared/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateEventSessionComponent } from './events/create-event-session/create-event-session.component';
 import { EventSessionListComponent } from './events/event-session/event-session-list.component';
+import { CollapsibleWellComponent } from './common/collapsible-well.component/collapsible-well.component';
 
 @NgModule({
   declarations: [
     Error404Component,
+    CollapsibleWellComponent,
     CreateEventComponent,
     CreateEventSessionComponent,
     EventsAppComponent,
