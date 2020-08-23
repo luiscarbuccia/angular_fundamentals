@@ -7,16 +7,19 @@ import { AuthService } from './shared/auth.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
   private firstName: FormControl;
   private lastName: FormControl;
 
-  constructor(private authService: AuthService, private router:Router){
+  constructor(private authService: AuthService, private router: Router) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
+    if(!this.authService.currentUser)
+      this.router.navigate(['events']);
+      
     this.firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
     this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required);
     this.profileForm = new FormGroup({
@@ -25,27 +28,27 @@ export class ProfileComponent implements OnInit{
     })
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['events']);
   }
 
-  saveProfileForm(formValues){
-    if(this.profileForm.valid){
+  saveProfileForm(formValues) {
+    if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
       this.router.navigate(['events']);
     }
   }
 
-  validateLastName():boolean{
-    if(this.lastName.invalid && this.lastName.touched){
+  validateLastName(): boolean {
+    if (this.lastName.invalid && this.lastName.touched) {
       return false;
     }
 
     return true;
   }
 
-  validateFirstName():boolean{
-    if(this.firstName.invalid && this.firstName.touched){
+  validateFirstName(): boolean {
+    if (this.firstName.invalid && this.firstName.touched) {
       return false;
     }
 
