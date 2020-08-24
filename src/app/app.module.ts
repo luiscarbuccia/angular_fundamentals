@@ -21,7 +21,8 @@ import { EventSessionListComponent } from './events/event-session/event-session-
 import { CollapsibleWellComponent } from './common/collapsible-well.component/collapsible-well.component';
 import { DurationPipe } from './events/shared/duration.pipe';
 
-declare let toastr: Toastr;
+let toastr: Toastr = window['toastr'];
+let jQuery = window['$'];
 
 @NgModule({
   declarations: [
