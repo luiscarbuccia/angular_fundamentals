@@ -20,6 +20,9 @@ import { CreateEventSessionComponent } from './events/create-event-session/creat
 import { EventSessionListComponent } from './events/event-session/event-session-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well.component/collapsible-well.component';
 import { DurationPipe } from './events/shared/duration.pipe';
+import { SimpleModalComponent } from './common/simpleModal/simpleModal.component';
+import { ModalTriggerDirective } from './common/modalTrigger/modalTrigger.directive';
+import { JQ_TOKEN } from './common/jQuery.service';
 
 let toastr: Toastr = window['toastr'];
 let jQuery = window['$'];
@@ -36,7 +39,9 @@ let jQuery = window['$'];
     EventSessionListComponent,
     EventThumbnailComponent,
     NavBarComponent, 
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule, 
@@ -56,6 +61,10 @@ let jQuery = window['$'];
     {
       provide: TOASTR_TOKEN,
       useValue: toastr
+    },
+    {
+      provide:JQ_TOKEN,
+      useValue: jQuery
     }
   ],
   bootstrap: [EventsAppComponent]
