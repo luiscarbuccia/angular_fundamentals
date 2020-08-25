@@ -20,7 +20,8 @@ export class EventDetailsComponent implements OnInit{
 
     ngOnInit(){
         this.activatedRoute.params.forEach((params: Params) =>{
-            this.event = this.eventService.getEvent(+params['id'])
+            this.event = this.eventService.getEvent(+params['id']);
+            this.addMode = false;
         })
     }
 

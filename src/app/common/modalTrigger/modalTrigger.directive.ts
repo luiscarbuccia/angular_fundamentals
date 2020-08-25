@@ -9,7 +9,6 @@ export class ModalTriggerDirective implements OnInit{
     @Input('modal-trigger') modalId: string;
 
     constructor(@Inject(JQ_TOKEN) private $: any, ref: ElementRef){
-        console.log("directive constructor")
         this.el = ref.nativeElement;
     };
 
