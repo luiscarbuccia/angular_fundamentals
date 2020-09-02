@@ -23,6 +23,8 @@ import { DurationPipe } from './events/shared/duration.pipe';
 import { SimpleModalComponent } from './common/simpleModal/simpleModal.component';
 import { ModalTriggerDirective } from './common/modalTrigger/modalTrigger.directive';
 import { JQ_TOKEN } from './common/jQuery.service';
+import { EventUpvoteComponent } from './events/event-upvote/event-upvote.component';
+import { VoterService } from './user/shared/voter.service';
 
 let toastr: Toastr = window['toastr'];
 let jQuery = window['$'];
@@ -36,6 +38,7 @@ let jQuery = window['$'];
     EventsAppComponent,
     EventDetailsComponent,
     EventsListComponent,
+    EventUpvoteComponent,
     EventSessionListComponent,
     EventThumbnailComponent,
     NavBarComponent, 
@@ -52,6 +55,7 @@ let jQuery = window['$'];
   providers: [
     AuthService,
     EventService, 
+    VoterService,
     EventsListResolver, 
     EventRouteActivator,
     {

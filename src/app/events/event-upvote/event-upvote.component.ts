@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class EventUpvoteComponent{
     @Input() count:number;
-    @Input() isVoting:boolean;
+    @Input() userHasVoted:boolean;
     @Output() voteEmitter = new EventEmitter();
 
     onClick(){
