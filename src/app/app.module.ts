@@ -25,6 +25,7 @@ import { ModalTriggerDirective } from './common/modalTrigger/modalTrigger.direct
 import { JQ_TOKEN } from './common/jQuery.service';
 import { EventUpvoteComponent } from './events/event-upvote/event-upvote.component';
 import { VoterService } from './user/shared/voter.service';
+import { LocationValidator } from './directives/location-validator.directive';
 
 let toastr: Toastr = window['toastr'];
 let jQuery = window['$'];
@@ -44,6 +45,7 @@ let jQuery = window['$'];
     NavBarComponent, 
     DurationPipe,
     SimpleModalComponent,
+    LocationValidator,
     ModalTriggerDirective
   ],
   imports: [
